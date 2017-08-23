@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\iconstyle.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\iconstyle.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btn_clr.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\btn_clr.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\iconstyle.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\iconstyle.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\buttonstyle.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\buttonstyle.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\edittext_style.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\edittext_style.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\remove.jpg",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\remove.jpg"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btn_clr.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\btn_clr.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bgclr.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\bgclr.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cell_heading.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\cell_heading.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\buttonstyle.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\buttonstyle.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cell_shape.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\cell_shape.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btns.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\btns.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cell_shape.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\cell_shape.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\remove.jpg",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\remove.jpg"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\add.jpg",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\add.jpg"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btns.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\btns.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bgclr.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\bgclr.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cell_heading.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-mdpi\\cell_heading.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\edittext_style.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\edittext_style.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\add.jpg",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\add.jpg"
+    }
+]

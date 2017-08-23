@@ -1,0 +1,194 @@
+[
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\myprogressdialog.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\myprogressdialog.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ph_print_display.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_ph_print_display.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_foot_path__preview.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_foot_path__preview.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dashboard.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\display.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\display.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_release_documents_print.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_release_documents_print.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shop_vendor.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_shop_vendor.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ipsettings.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_ipsettings.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\printdisplay.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\printdisplay.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture_images.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_capture_images.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_settings.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_paired_devices.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_paired_devices.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_settings.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dashboard.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\header.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ph_print_display.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_ph_print_display.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\footer.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_previous_history.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_previous_history.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\myprogressdialog.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\myprogressdialog.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\display.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\display.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\footer.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\row.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_release_documents_print.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_release_documents_print.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shop_vendor.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_shop_vendor.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_previous_history.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_previous_history.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\printdisplay.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\printdisplay.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_foot_path__vendor.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_foot_path__vendor.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_foot_path__vendor.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_foot_path__vendor.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_paired_devices.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_paired_devices.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_progress_dialog.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\custom_progress_dialog.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\header.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_release_document.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_release_document.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture_images.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_capture_images.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_progress_dialog.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\custom_progress_dialog.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_release_document.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_release_document.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_duplicate_print.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_duplicate_print.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_device.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\list_item_device.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\row.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_otp_input.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_otp_input.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_foot_path__preview.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_foot_path__preview.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_duplicate_print.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_duplicate_print.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ipsettings.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_ipsettings.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_reports.xml",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\layout\\activity_reports.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_device.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\list_item_device.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_otp_input.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_otp_input.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_reports.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout\\activity_reports.xml"
+    }
+]

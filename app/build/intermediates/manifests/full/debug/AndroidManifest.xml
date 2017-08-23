@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mtpv.seizure"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_CORSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mtpv.seizureInfo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mtpv.seizureInfo.Seizure" >
+        </activity>
+        <activity android:name="com.mtpv.seizureInfo.DisplayP" >
+        </activity>
+        <activity android:name="com.mtpv.seizureInfo.PrintDispaly" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.Dashboard"
+            android:label="@string/title_activity_dashboard" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.Shop_vendor"
+            android:label="@string/title_activity_shop_vendor"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.FootPath_Vendor"
+            android:label="@string/title_activity_foot_path__vendor"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.IPsettings"
+            android:label="@string/title_activity_ipsettings"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.DuplicatePrint"
+            android:label="@string/title_activity_duplicate_print" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.Reports"
+            android:label="@string/title_activity_reports" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.DeviceListActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.FootPath_Preview"
+            android:label="@string/title_activity_foot_path__preview" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.ReleaseDocument"
+            android:label="@string/title_activity_release_document" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.OTP_input"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.ReleaseDocumentsPrint"
+            android:label="@string/title_activity_release_documents_print" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.CaptureImages"
+            android:label="@string/title_activity_capture_images" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.PreviousHistory"
+            android:label="@string/title_activity_previous_history" >
+        </activity>
+        <activity
+            android:name="com.mtpv.seizureInfo.Ph_printDisplay"
+            android:label="@string/title_activity_ph_print_display" >
+        </activity>
+    </application>
+
+</manifest>

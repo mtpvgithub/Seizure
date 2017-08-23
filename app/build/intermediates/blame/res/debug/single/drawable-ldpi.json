@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\traffic_small.png",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-ldpi\\traffic_small.png"
+    },
+    {
+        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\previoushistory.png",
+        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-ldpi\\previoushistory.png"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\traffic_small.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-ldpi\\traffic_small.png"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\previoushistory.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-ldpi\\previoushistory.png"
+    }
+]

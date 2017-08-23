@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/bgcolor" >
+
+  <!-- Header aligned to top -->
+  <RelativeLayout
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/header" />
+    
+     <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView1"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="-25dp"
+        android:text="@string/version"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+  </RelativeLayout>
+
+  <!-- Footer aligned to bottom -->
+  <RelativeLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/footer" />
+  </RelativeLayout>
+
+  <!-- Scrollable Content below header and above footer -->
+  <ScrollView
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@id/footer"
+    android:layout_below="@id/header" >
+
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:orientation="vertical" >
+      
+       <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/header_grnt_padding_ten"
+                android:text="@string/ip_settings_header"
+                android:textColor="@color/navi_color"
+                android:textStyle="bold"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_rg_ipsettings_xml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_marginBottom="@dimen/header_grnt_padding_five"
+                android:layout_marginTop="@dimen/header_grnt_padding_five" >
+
+                 <RadioGroup
+                    android:id="@+id/radioGroup_live_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radioButton_live"
+                        style="@style/dd_custom_radio_btn_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        android:paddingLeft="@dimen/header_grnt_padding_ten"
+                        android:text="Open Network" 
+                        android:textSize="22sp"
+                        android:textStyle="bold"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton_test"
+                        style="@style/dd_custom_radio_btn_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        android:paddingLeft="@dimen/header_grnt_padding_ten"
+                        android:text="Local Network"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_ipsetting"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/ll_rg_ipsettings_xml"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/header_grnt_padding_five"
+                android:layout_marginTop="@dimen/header_grnt_padding_five" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.15"
+                    android:text="@string/service_url"
+                    android:textColor="@color/navi_color"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edt_service_ipsettings_xml"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.9"
+                    style="@style/edt_custom_style"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_ftpurl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_ipsetting"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/header_grnt_padding_ten"
+                android:layout_marginTop="@dimen/header_grnt_padding_five" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="@string/ftp_url"
+                    android:textColor="@color/navi_color"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edt_ftpurl_xml"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    style="@style/edt_custom_style"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_btns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_ftpurl"
+                android:layout_marginTop="20dp" >
+
+                <Button
+                    android:id="@+id/btnback_ipsettings_xml"
+                    style="@style/naviblue_custom_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/header_grnt_padding_five"
+                    android:layout_weight="1"
+                    android:text="Back" />
+
+                <Button
+                    android:id="@+id/btnsubmit_ipsettings_xml"
+                    style="@style/naviblue_custom_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Save" />
+            </LinearLayout>
+        </RelativeLayout>
+ 
+    </LinearLayout>
+
+  </ScrollView>
+
+</RelativeLayout>

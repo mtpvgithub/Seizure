@@ -17,7 +17,14 @@ ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:2:1-118:12
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Srinivas\.android\build-cache\a682e61963d0dc34b972beeffed9da1f9122ca70\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Srinivas\.android\build-cache\1046fef8bb796bf50d49593e6087bb5b49dd9938\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\0cfcb9f3d1f0e550da64fbef7f4b36ab6af9d87b\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Srinivas\.android\build-cache\9ff635c7d3853ba48fc17e00903ad880db1560c7\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Srinivas\.android\build-cache\fa21b4d5e8b18f621ba8594a450ed4b54f4f9696\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\a53240c5f75f19270e348bed3da580346f845afc\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from D:\Android\Seizure\app\src\main\AndroidManifest.xml
@@ -88,7 +95,12 @@ ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:26:5-74
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:26:22-71
 application
 ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:28:5-116:19
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Srinivas\.android\build-cache\a682e61963d0dc34b972beeffed9da1f9122ca70\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Srinivas\.android\build-cache\1046fef8bb796bf50d49593e6087bb5b49dd9938\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\0cfcb9f3d1f0e550da64fbef7f4b36ab6af9d87b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Srinivas\.android\build-cache\9ff635c7d3853ba48fc17e00903ad880db1560c7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Srinivas\.android\build-cache\fa21b4d5e8b18f621ba8594a450ed4b54f4f9696\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\a53240c5f75f19270e348bed3da580346f845afc\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:31:9-41
 	android:allowBackup
@@ -231,3 +243,14 @@ ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:112:9-115:20
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:114:13-68
 	android:name
 		ADDED from D:\Android\Seizure\app\src\main\AndroidManifest.xml:113:13-64
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Srinivas\.android\build-cache\1046fef8bb796bf50d49593e6087bb5b49dd9938\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\0cfcb9f3d1f0e550da64fbef7f4b36ab6af9d87b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Srinivas\.android\build-cache\9ff635c7d3853ba48fc17e00903ad880db1560c7\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Srinivas\.android\build-cache\fa21b4d5e8b18f621ba8594a450ed4b54f4f9696\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Srinivas\.android\build-cache\a53240c5f75f19270e348bed3da580346f845afc\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Srinivas\.android\build-cache\2fca4248d43fda65b6425be167b5534f07ca056a\output\AndroidManifest.xml:26:9-47

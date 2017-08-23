@@ -132,6 +132,16 @@
               android:text=""
               android:textColor="#191970"
               android:textSize="28sp" />
+		   <TextView
+			   android:id="@+id/ffd"
+			   style="@style/navi_text_style"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:text="Blutooth Devices Display Here"
+			   android:textStyle="bold"
+			   android:textSize="25sp"
+			   android:visibility="visible"
+			   android:layout_below="@+id/buletooth_text"/>
            
             <ListView
                 android:id="@+id/listview_devicesfound"

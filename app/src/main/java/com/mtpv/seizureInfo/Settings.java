@@ -683,8 +683,7 @@ public class Settings extends Activity {
 		} else {
 			if (bluetoothAdapter.isEnabled()) {
 				if (bluetoothAdapter.isDiscovering()) {
-					ffd
-							.setText("Bluetooth is currently in device discovery process");
+					ffd.setText("Bluetooth is currently in device discovery process");
 				} else {
 					ffd.setText("Bluetooth is Enabled");
 					scan_bluetooth.setEnabled(true);

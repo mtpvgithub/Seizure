@@ -8,12 +8,16 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\dialog_logo.png"
     },
     {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radiobutton_checked_md.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\radiobutton_checked_md.png"
+    },
+    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radiobutton_unchecked_md.png",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\radiobutton_unchecked_md.png"
     },
     {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\photo.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\photo.png"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checked_uncheckbox.png",
@@ -22,14 +26,6 @@
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checked_checkbox.png",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\checked_checkbox.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radiobutton_checked_md.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\radiobutton_checked_md.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radiobutton_unchecked_md.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\radiobutton_unchecked_md.png"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
@@ -44,60 +40,12 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\tin.png"
     },
     {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\previoushistory.png",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\previoushistory.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\traffic_small.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\traffic_small.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\print.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\print.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\dialog_logo.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\dialog_logo.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\previoushistory.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\previoushistory.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\radiobutton_checked_md.png",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\radiobutton_checked_md.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\photo.png",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\photo.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checked_uncheckbox.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\checked_uncheckbox.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\releasedocument.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\releasedocument.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\photo.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\photo.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\dup_print.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\dup_print.png"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tin.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\tin.png"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\releasedocument.png",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\releasedocument.png"
     },
     {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\checked_checkbox.png",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\checked_checkbox.png"
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\previoushistory.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\previoushistory.png"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\print.png",

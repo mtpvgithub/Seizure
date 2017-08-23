@@ -4,10 +4,6 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\edittextstyle.xml"
     },
     {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\cell_heading.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\cell_heading.xml"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\cell_shape.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\cell_shape.xml"
     },
@@ -16,32 +12,12 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\cell_heading.xml"
     },
     {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\cell_shape.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\cell_shape.xml"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\transbg_style.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\transbg_style.xml"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_radio_button.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\custom_radio_button.xml"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_radio_button.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\custom_radio_button.xml"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\navi_blue_btn_style.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-hdpi\\navi_blue_btn_style.xml"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\edittextstyle.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\edittextstyle.xml"
-    },
-    {
-        "merged": "D:\\Android\\Seizure1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\navi_blue_btn_style.xml",
-        "source": "D:\\Android\\Seizure1\\app\\src\\main\\res\\drawable-hdpi\\navi_blue_btn_style.xml"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\transbg_style.xml",

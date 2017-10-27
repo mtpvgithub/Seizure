@@ -1,19 +1,26 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.mtpv.seizure"
-        minSdkVersion 17
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 25
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
         }
     }
 }
@@ -26,4 +33,8 @@ dependencies {
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
     compile files('libs/opencv_library-2.4.3.jar')
     compile files('libs/org-apache-commons-codec.jar')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:support-core-utils:25.3.1'
+    compile files('libs/sun.misc.BASE64Decoder.jar')
+    compile 'com.android.support:design:25.3.1'
 }

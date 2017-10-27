@@ -197,8 +197,7 @@ public class DuplicatePrint extends Activity {
 			
 			offenceDate = date_Btn.getText().toString();
 			
-			DuplicatePrint = WS.getDuplicatePrint(offenceDate,PidCode,"","","");		
-	    	 Log.e("DuplicatePrint ::::", DuplicatePrint);
+			DuplicatePrint = WS.getDuplicatePrint(offenceDate,PidCode,"","","");
 
 			runOnUiThread(new Runnable() {
 				
@@ -208,14 +207,11 @@ public class DuplicatePrint extends Activity {
 					 layout.removeAllViews();
 					 //ll.removeAllViews();
 			    	 //String pidCode = PidCode;
-			    	 
-			    	 Log.e("offenceDate ::::", offenceDate);
-			    	 Log.e("pidCode ::::", PidCode);
 
 			    		try{
 							//((LinearLayout)ll.getParent()).removeView(ll);
 							
-							if (DuplicatePrint!=null&&DuplicatePrint.length()>0){	
+							if (DuplicatePrint!=null&&!DuplicatePrint.equals("NA")&&DuplicatePrint.length()>0){
 								DuplicatePrint1 = DuplicatePrint.split("\\|");
 								
 								for (int j=0;j<DuplicatePrint1.length;j++) {	
@@ -266,8 +262,7 @@ public class DuplicatePrint extends Activity {
 								}//end of for loop
 							}
 							else{
-								//Btn.setText("");//end validation
-								//Toast.makeText(getApplicationContext(), "Data Not Found",Toast.LENGTH_LONG).show();
+								showToast("Data Not Found");
 							}
 						}catch(Exception error){
 							runOnUiThread(new Runnable() {
@@ -324,20 +319,25 @@ public class DuplicatePrint extends Activity {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			removeDialog(PROGRESS_DIALOG);
-			
-			if (getDuplicatePrintByEticket.equals("0^NA^NA")) {
-				dupprintFLG = false ;
-			}else {
-				dupprintFLG = true ;
-				
-				SharedPreferences sharedPreference = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-				SharedPreferences.Editor edit = sharedPreference.edit();
-				edit.putString("printFrom", "duplicatprint");
-				edit.commit();
-				
-				Intent i = new Intent(DuplicatePrint.this, PrintDispaly.class);
-				i.putExtra("generateChallan", WebService.Challan_response);
-				startActivity(i);
+			try {
+				if (getDuplicatePrintByEticket.equals("0^NA^NA")) {
+					dupprintFLG = false;
+				} else if(getDuplicatePrintByEticket.equals("NA")){
+					showToast("Challan generation Failed!");
+				} else {
+					dupprintFLG = true;
+					SharedPreferences sharedPreference = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+					SharedPreferences.Editor edit = sharedPreference.edit();
+					edit.putString("printFrom", "duplicatprint");
+					edit.commit();
+
+					Intent i = new Intent(DuplicatePrint.this, PrintDispaly.class);
+					i.putExtra("generateChallan", WebService.Challan_response);
+					startActivity(i);
+				}
+			}catch (Exception e){
+				e.printStackTrace();
+				showToast("Please check network");
 			}
 		}
 	}

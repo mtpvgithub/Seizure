@@ -20,12 +20,12 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\download.png"
     },
     {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\previoushistory.png",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\previoushistory.png"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\spot.png",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\spot.png"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\previoushistory.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\previoushistory.png"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\logo.png",
@@ -56,12 +56,12 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\mtpv.png"
     },
     {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\report.png",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\report.png"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\off.png",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\off.png"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\report.png",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\drawable-mdpi\\report.png"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\spothead.png",

@@ -10,8 +10,11 @@ import android.util.Log;
 
 import com.mtpv.seizureInfo.MainActivity;
 
+import java.util.Objects;
+
 public class ServiceHelper {
 	private static String NAMESPACE = "http://service.mother.com";
+	private static String NAMESPACE_OtpStatus = "http://service.et.mtpv.com";
 	private static String METHOD_NAME = "authenticateUser";
 	public static String SOAP_ACTION = NAMESPACE + METHOD_NAME ;
 	
@@ -52,7 +55,7 @@ public class ServiceHelper {
 	    //public String  previousHistory(String idCode,String idValue,String firmRegnNo);
 	public static String PREVIOUS_HISTORY = "previousHistory" ;
 	
-	public static String GET_DETAINED_ITEMS_BY_CHALLAN_NO = "" ; 
+	public static String GET_DETAINED_ITEMS_BY_CHALLAN_NO = "",otpStatusnTime ;
 	
 	public static String GET_DETAINED_ITEMS_BY_AADHAAR = "" ; 
 	
@@ -71,30 +74,33 @@ public class ServiceHelper {
 	public static String  ghmc_hisrty_resp =null,print_resp=null,prv_hisrty_resp =null,prv_hisrty_resp_firm =null,prv_hisrty_resp_tin =null, location_masters_resp =null;
 	
 	public static void login(String pid, String pidpwd, String mob_imei,
-			String lat, String log) {
+			String lat, String log,String appVersion) {
 		try {
-			//String pidCd, String password,String imei,String gpsLattitude,String gpsLongitude
 			SoapObject request = new SoapObject(NAMESPACE, "" + AUTHENTICATION);
 			request.addProperty("pidCd", pid);
 			request.addProperty("password", pidpwd);
 			request.addProperty("imei", mob_imei);
 			request.addProperty("gpsLattitude", lat);
 			request.addProperty("gpsLongitude", log);
+			request.addProperty("appVersion", appVersion);
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 			envelope.dotNet = true;
 			envelope.setOutputSoapObject(request);
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			login_response = result.toString();
-			//log = result.toString();
-			if (login_response == "0"||login_response.equals("NA")||login_response.equals("anyTpe{}")) {
-				login_response = null ;
-			} else {
-				login_response = login_response.replace("|", ":");
-				MainActivity.arr_logindetails = login_response.split(":");
-				
-				Log.i("login response :::::::", ""+login_response);
+			try {
+				login_response = result.toString();
+				if (Objects.equals(login_response, "0") || login_response.equals("NA") || login_response.equals("anyTpe{}")) {
+					login_response = "0";
+				} else {
+					login_response = login_response.replace("|", ":");
+					MainActivity.arr_logindetails = login_response.split(":");
+
+				}
+			}catch (Exception e){
+				e.printStackTrace();
+				login_response = "0";
 			}
 
 		} catch (Exception E) {
@@ -102,8 +108,54 @@ public class ServiceHelper {
 			login_response = "0";
 		}
 	}
-	
-	
+
+
+
+	public static  String  getOtpStatusNTime(String unitcode)
+	{
+		try {
+			SoapObject request = new SoapObject(NAMESPACE, "getOtpStatusNTime");
+
+			request.addProperty("unitcCode", unitcode);
+
+
+
+			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+			envelope.dotNet = true;
+			envelope.setOutputSoapObject(request);
+
+
+			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
+			androidHttpTransport.call(SOAP_ACTION, envelope);
+			Object result = envelope.getResponse();
+
+			try {
+				if(result!=null) {
+					otpStatusnTime = result.toString().trim();
+				}else
+				{
+					otpStatusnTime = "NA|NA";
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				otpStatusnTime = "NA|NA";
+			}
+		} catch (SoapFault fault) {
+
+			fault.printStackTrace();
+			otpStatusnTime = "NA|NA";
+
+		} catch (Exception E) {
+			E.printStackTrace();
+			otpStatusnTime = "NA|NA";
+		}
+
+		return otpStatusnTime;
+	}
+
+
+
 	//previousHistory(String idCode,String idValue,String firmName, String tinNumber)
 		public static void getPreviousHstryTin(String idCode, String idValue,String firmName, String tinNumber) {
 			// TODO Auto-generated method stub
@@ -121,7 +173,6 @@ public class ServiceHelper {
 							SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 							envelope.dotNet = true;
 							envelope.setOutputSoapObject(request);
-							Log.i("ghmc_hisrty_resp request ::::::", ""+request);
 							HttpTransportSE httpTransportSE = new HttpTransportSE(MainActivity.URL);
 							httpTransportSE.call(SOAP_ACTION, envelope);
 							Object result = envelope.getResponse();
@@ -134,7 +185,6 @@ public class ServiceHelper {
 								
 							}else {
 								prv_hisrty_resp_tin = result.toString();
-								Log.i("ghmc_prev_hisrty_resp Response ::::::", ""+prv_hisrty_resp_tin);
 							}
 						} catch (Exception e) {
 							// TODO: handle exception
@@ -156,7 +206,7 @@ public class ServiceHelper {
 						SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 						envelope.dotNet = true;
 						envelope.setOutputSoapObject(request);
-						Log.i("ghmc_hisrty_duplicate_print ::::::", ""+request);
+						Log.i("ghmc_ ::::::", ""+request);
 						HttpTransportSE httpTransportSE = new HttpTransportSE(MainActivity.URL);
 						httpTransportSE.call(SOAP_ACTION, envelope);
 						Object result = envelope.getResponse();
@@ -169,7 +219,7 @@ public class ServiceHelper {
 							
 						}else {
 							print_resp = result.toString();
-							Log.i("ghmc_prevprint_resp Response ::::::", ""+print_resp);
+							Log.i("ghmc_::", ""+print_resp);
 						}
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -190,23 +240,28 @@ public class ServiceHelper {
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			psMaster_resp = result.toString();
-			if (psMaster_resp.trim() == "0" || psMaster_resp.trim().equals("NA") || psMaster_resp.trim().equals("anyTpe{}")) {
-				 psMaster_resp = null ;
-			} else {
-				psMaster_resp_array = new String[0];
-				psMaster_resp_array = psMaster_resp.split("\\@");   //("\\@") this spits PS names
-				
-				for (int i = 0; i < ServiceHelper.psMaster_resp_array.length; i++) {
-					allPSnames = ServiceHelper.psMaster_resp_array[i].split("\\:")[1];
-					
-					Log.i("allPSnames", allPSnames);
+			if (null!=result) {
+				psMaster_resp = result.toString();
+				if (psMaster_resp.trim() == "0" || psMaster_resp.trim().equals("NA") || psMaster_resp.trim().equals("anyTpe{}")) {
+					psMaster_resp = null;
+				} else {
+					psMaster_resp_array = new String[0];
+					psMaster_resp_array = psMaster_resp.split("\\@");   //("\\@") this spits PS names
+
+					for (int i = 0; i < ServiceHelper.psMaster_resp_array.length; i++) {
+						allPSnames = ServiceHelper.psMaster_resp_array[i].split("\\:")[1];
+
+					}
+
 				}
-				
+			}else{
+				psMaster_resp_array = new String[0];
+				psMaster_resp = null;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			psMaster_resp_array = new String[0];
+			psMaster_resp = null;
 		}
 	}
 	
@@ -226,25 +281,26 @@ public class ServiceHelper {
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 			envelope.dotNet = true;
 			envelope.setOutputSoapObject(request);
-			Log.i("ghmc_hisrty_resp request ::::::", ""+request);
+			Log.i("ghm:", ""+request);
 			HttpTransportSE httpTransportSE = new HttpTransportSE(MainActivity.URL);
 			httpTransportSE.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
 			
-			prv_hisrty_resp_firm = result.toString();
-			Log.i("ghmc_prev_hisrty_resp Response ::::::", ""+prv_hisrty_resp_firm);
-			if (prv_hisrty_resp_firm.trim()==null || prv_hisrty_resp_firm.trim().equals("NA")
-					|| prv_hisrty_resp_firm.trim().equals("anyType{}")|| prv_hisrty_resp_firm.trim().equals("0^NA^NA")) {
-				prv_hisrty_resp_firm = null;
+			prv_hisrty_resp_firm ="";
+			if (result.toString()==null || result.toString().equals("NA")
+					|| result.toString().trim().equals("anyType{}")|| result.toString().trim().equals("0^NA^NA")) {
+				prv_hisrty_resp_firm = "NA";
 				
 			}else {
 				prv_hisrty_resp_firm = result.toString();
-				//Log.i("ghmc_prev_hisrty_resp Response ::::::", ""+prv_hisrty_resp);
+				prv_hisrty_resp_firm = "NA";
+
 			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			prv_hisrty_resp_firm = "NA";
 		}
 	}
 	public static void getPreviousHstry(String idCode, String idValue,String firmName, String tinNumber) {
@@ -264,7 +320,7 @@ public class ServiceHelper {
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 			envelope.dotNet = true;
 			envelope.setOutputSoapObject(request);
-			Log.i("ghmc_hisrty_resp request ::::::", ""+request);
+			Log.i("ghmc_::", ""+request);
 			HttpTransportSE httpTransportSE = new HttpTransportSE(MainActivity.URL);
 			httpTransportSE.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
@@ -277,7 +333,7 @@ public class ServiceHelper {
 				
 			}else {
 				prv_hisrty_resp = result.toString();
-				Log.i("ghmc_prev_hisrty_resp Response ::::::", ""+prv_hisrty_resp);
+				Log.i("ghmc_p::", ""+prv_hisrty_resp);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -291,34 +347,36 @@ public class ServiceHelper {
 			//String pidCd, String password,String imei,String gpsLattitude,String gpsLongitude
 			SoapObject request = new SoapObject(NAMESPACE, "" + POINT_DETAILS_BY_PsCODE);
 			request.addProperty("pscode", psCode);
-			
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 			envelope.dotNet = true;
 			envelope.setOutputSoapObject(request);
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			
+			if (null!=result){
 			point_by_ps_resp = result.toString();
-			
-			
-			if (point_by_ps_resp!=null) {
+
+			if (point_by_ps_resp != null) {
 				PointNamesBypsNames_master = new String[0];
 				PointNamesBypsNames_master = point_by_ps_resp.split("\\@");   //("\\@") this spits PS names
-				
+
 				for (int i = 0; i < ServiceHelper.PointNamesBypsNames_master.length; i++) {
 					allPointnames = ServiceHelper.PointNamesBypsNames_master[i].split("\\:")[1];
-					
-					Log.i("allPointnames", allPointnames);
+
 				}
-			}else if (point_by_ps_resp==null || point_by_ps_resp.equals("NA") || point_by_ps_resp.equals("anyType{}")) {
+			} else if (point_by_ps_resp == null || point_by_ps_resp.equals("NA") || point_by_ps_resp.equals("anyType{}")) {
+				point_by_ps_resp = null;
+			} else {
+				point_by_ps_resp = null;
+			}
+		}else{
+				PointNamesBypsNames_master = new String[0];
 				point_by_ps_resp = null ;
 			}
-			
-			Log.i("point_by_ps_resp :::",""+point_by_ps_resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 			PointNamesBypsNames_master = new String[0];
+			point_by_ps_resp = null ;
 		}
 	}
 	
@@ -429,10 +487,10 @@ public class ServiceHelper {
 			}else {
 				report_resp = result.toString();
 			}
-			Log.i("report_resp :::", ""+report_resp);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			report_resp="NA";
 		}
 	}
 	
@@ -452,15 +510,21 @@ public class ServiceHelper {
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			
-			prevHistry_resp = result.toString();
-			if (prevHistry_resp.trim()==null || prevHistry_resp.trim().equals("NA") || prevHistry_resp.trim().equals("anyType{}")) {
-				prevHistry_resp = null;
-			}else {
+			try {
+
 				prevHistry_resp = result.toString();
+				if (prevHistry_resp.trim() == null || prevHistry_resp.trim().equals("NA") || prevHistry_resp.trim().equals("anyType{}")) {
+					prevHistry_resp = null;
+				} else {
+					prevHistry_resp = result.toString();
+				}
+			}catch (Exception e){
+				e.printStackTrace();
+				prevHistry_resp="NA";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			prevHistry_resp="NA";
 		}
 	}
 	
@@ -479,14 +543,19 @@ public class ServiceHelper {
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			
-			otp_Send_resp = result.toString();
-			if (otp_Send_resp.trim()==null || otp_Send_resp.trim().equals("NA") || otp_Send_resp.trim().equals("anyType{}")) {
-				otp_Send_resp = null;
-			}else {
+
+			if (null!=result) {
+
 				otp_Send_resp = result.toString();
+				if (otp_Send_resp.trim() == null || otp_Send_resp.trim().equals("NA") || otp_Send_resp.trim().equals("anyType{}")) {
+					otp_Send_resp = null;
+				} else {
+					otp_Send_resp = result.toString();
+				}
+			}else{
+				otp_Send_resp = "NA";
 			}
-			Log.i("otp_Send_resp :::", ""+otp_Send_resp);
+
 
 		} catch (SoapFault fault) {
 			otp_Send_resp = "NA";
@@ -512,7 +581,7 @@ public class ServiceHelper {
 			HttpTransportSE androidHttpTransport = new HttpTransportSE(MainActivity.URL);
 			androidHttpTransport.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			
+
 			otp_verify_resp = result.toString();
 			if (otp_verify_resp.trim()==null || otp_verify_resp.trim().equals("NA") || otp_verify_resp.trim().equals("anyType{}")) {
 				otp_verify_resp = null;
@@ -542,19 +611,24 @@ public class ServiceHelper {
 			HttpTransportSE httpTransportSE = new HttpTransportSE(MainActivity.URL);
 			httpTransportSE.call(SOAP_ACTION, envelope);
 			Object result = envelope.getResponse();
-			
-			detainedBy_challanNo_resp = result.toString();
-			
-			if (detainedBy_challanNo_resp.trim().equals("0") || detainedBy_challanNo_resp.trim().equals("NA")
-					|| detainedBy_challanNo_resp.trim().equals("anyType{}")) {
-				detainedBy_challanNo_resp = "0";
-				pending_challans_master = new String[0];
-				pending_challans_details = new String[0][0];
-			}else {
-				pending_challans_master = new String[0];
-				pending_challans_master = detainedBy_challanNo_resp.split("\\@")[0].split("\\!");
+			if (null!=result) {
+
+				detainedBy_challanNo_resp = result.toString();
+
+				if (detainedBy_challanNo_resp.trim().equals("0") || detainedBy_challanNo_resp.trim().equals("NA")
+						|| detainedBy_challanNo_resp.trim().equals("anyType{}")) {
+					detainedBy_challanNo_resp = "0";
+					pending_challans_master = new String[0];
+					pending_challans_details = new String[0][0];
+				} else {
+					pending_challans_master = new String[0];
+					pending_challans_master = detainedBy_challanNo_resp.split("\\@")[0].split("\\!");
+				}
+			}else{
+				detainedBy_challanNo_resp = null;
 			}
 		}  catch (SoapFault fault) {
+			fault.printStackTrace();
 			detainedBy_challanNo_resp = null;
 
         } catch (Exception e) {

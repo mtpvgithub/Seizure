@@ -46,6 +46,9 @@ public class IPsettings extends Activity implements OnClickListener {
 	/*-----below is commented just to use the wifi : 22-01-2015-----*/
 	//public static String test_service_url = "http://192.168.11.55:8080/";
 	public static String test_service_url = "http://192.168.11.10:8080/";//125.16.1.70:8080
+	//public static String test_service_url = "http://192.168.11.4/";
+
+
 	@SuppressWarnings("unused")
 	private String test_service_url3 = "http://192.168.11.4";
 	@SuppressWarnings("unused")
@@ -61,22 +64,19 @@ public class IPsettings extends Activity implements OnClickListener {
 	
 	public static String open_ftp_fix = "125.16.1.69:99";
 	public static String ftp_fix = "192.168.11.9:99";
-	
-	/* TO SET FIRST TIME SERVICE & FTP DETAILS END */
+
 
 	@SuppressWarnings("deprecation")
 	@SuppressLint("WorldReadableFiles")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_ipsettings);
 		LoadUIComponents();
 
-		preference = getSharedPreferences("preferences", MODE_WORLD_READABLE);
+		preference = getSharedPreferences("preferences", MODE_PRIVATE);
 		editor = preference.edit();
-		// service type :  live// or// test
 		SERVICE_TYPE_PREf = preference.getString("servicetype", "live");
 		SERVICE_URL_PREF = preference.getString("serviceurl", "url1");
 		FTP_URL_PREF = preference.getString("ftpurl", "url2");
@@ -166,7 +166,7 @@ public class IPsettings extends Activity implements OnClickListener {
 			} else if (et_ftp_url.getText().toString().trim().equals("")) {
 				showError(et_ftp_url, "Enter FTP URL");
 			} else {
-				preference = getSharedPreferences("preferences", MODE_WORLD_READABLE);
+				preference = getSharedPreferences("preferences", MODE_PRIVATE);
 				editor = preference.edit();
 				// preference.edit().clear().commit();
 				if (preference.contains("serviceurl")) {

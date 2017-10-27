@@ -28,12 +28,12 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\header.xml"
     },
     {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\custom_progress_dialog.xml",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\custom_progress_dialog.xml"
-    },
-    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\display.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\display.xml"
+    },
+    {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\custom_progress_dialog.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\custom_progress_dialog.xml"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_paired_devices.xml",
@@ -60,16 +60,16 @@
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\list_item_device.xml"
     },
     {
+        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_foot_path__vendor.xml",
+        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\activity_foot_path__vendor.xml"
+    },
+    {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\row.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\row.xml"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_previous_history.xml",
         "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\activity_previous_history.xml"
-    },
-    {
-        "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_foot_path__vendor.xml",
-        "source": "D:\\Android\\Seizure\\app\\src\\main\\res\\layout-sw720dp\\activity_foot_path__vendor.xml"
     },
     {
         "merged": "D:\\Android\\Seizure\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw720dp-v13\\activity_ipsettings.xml",

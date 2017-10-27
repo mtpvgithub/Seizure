@@ -14,6 +14,7 @@ import java.util.UUID;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
+import com.mtpv.seizure.BuildConfig;
 import com.mtpv.seizure.R;
 import com.mtpv.seizureHelpers.DataBase;
 
@@ -37,8 +38,11 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
@@ -62,11 +66,9 @@ public class Settings extends Activity {
     private Button mActivateBtn;
     private Button mPairedBtn;
     private Button mScanBtn;
-
     Button save, cancel_btn, scan_bluetooth;
     public static ListView bluetooth_list;
     public static EditText et_bt_address;
-
     final int PROGRESS_DIALOG = 2;
     String server = "192.168.11.9";
     int port = 99;
@@ -88,21 +90,15 @@ public class Settings extends Activity {
     @SuppressWarnings("unused")
     private static final int REQUEST_ENABLE_BT = 1;
     String address = "";
-
     private ProgressDialog mProgressDlg;
-
     private ArrayList<BluetoothDevice> mDeviceList = new ArrayList<BluetoothDevice>();
-
     public static BluetoothAdapter mBluetoothAdapter;
 
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
     public static String BLT_Name = "";
-
     ImageView update_apk;
-
     public static boolean bluetoothFLG = false, pinpadFLG = false;
-
     public static String BTprinter_Adress = "", BTprinter_Name = "";
 
     @SuppressWarnings("unused")
@@ -111,21 +107,15 @@ public class Settings extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_settings);
-
         ffd = (TextView) findViewById(R.id.ffd);
-
         save = (Button) findViewById(R.id.save);
         cancel_btn = (Button) findViewById(R.id.cancel_Btn);
         scan_bluetooth = (Button) findViewById(R.id.scan_btn);
-
         mActivateBtn = (Button) findViewById(R.id.btn_enable);
         mPairedBtn = (Button) findViewById(R.id.btn_view_paired);
         mScanBtn = (Button) findViewById(R.id.btn_scan);
-
         et_bt_address = (EditText) findViewById(R.id.buletooth_text);
-
         update_apk = (ImageView) findViewById(R.id.update_apk);
-
         if (et_bt_address.getText().toString().equals("")) {
             DataBase helper = new DataBase(getApplicationContext());
             try {
@@ -138,12 +128,8 @@ public class Settings extends Activity {
 
                 if (cursor.moveToFirst()) {
                     do {
-
-                        // Log.i("1 :",""+ cursor.getString(0));
                         BLT_Name = cursor.getString(0);
-
                         et_bt_address.setText(BLT_Name);
-
                     } while (cursor.moveToNext());
                 }
                 db.close();
@@ -158,26 +144,20 @@ public class Settings extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 if (!et_bt_address.getText().toString().trim().equals("")) {
                     showToast("Blutooth Device Saved Successfully..!");
                     String n = et_bt_address.getText().toString();
-
                     SharedPreferences.Editor editor = getSharedPreferences(mypreference, MODE_PRIVATE).edit();
                     editor.putString("BLT_Name", n);
                     editor.commit();
-
                     DataBase helper = new DataBase(getApplicationContext());
-
                     ContentValues values = new ContentValues();
                     values.put("BT_Name", n);
                     SQLiteDatabase db = openOrCreateDatabase(DataBase.DATABASE_NAME, MODE_PRIVATE, null);
-                    // db.execSQL("delete from " + DataBase.USER_TABLE);
                     db.execSQL("DROP TABLE IF EXISTS " + DataBase.Bluetooth);
                     db.execSQL(DataBase.CREATE_Bluetooth);
                     db.insert(DataBase.Bluetooth, null, values);
-                    System.out.println(
-                            "*********************OFFICER TABLE Insertion Successfully **********************************");
+                    System.out.println("*OFFICER TABLE Insertion Successfully *");
                     finish();
                 } else {
                     showToast("Please Scan Bluetooth Device");
@@ -189,30 +169,18 @@ public class Settings extends Activity {
         });
 
         cancel_btn.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 finish();
             }
         });
-
         update_apk.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 new Async_UpdateApk().execute();
             }
         });
-
         bluetooth_list = (ListView) findViewById(R.id.listview_devicesfound);
-
-		/* GETTING BLUETOOTH ADDRESS */
-
-	
-		/* BLUETOOTH CONNECTIVITY */
-        // if (et_bt_address.getText().toString().trim().equals("")) {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         CheckBlueToothState();
         registerReceiver(ActionFoundReceiver, new IntentFilter(
@@ -220,111 +188,36 @@ public class Settings extends Activity {
         btArrayAdapter = new ArrayAdapter<String>(Settings.this,
                 android.R.layout.simple_list_item_1);
         bluetooth_list.setAdapter(btArrayAdapter);
-
         bluetooth_list.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Log.i("bluetoothFLG and pinpadFLG********", "" + bluetoothFLG
-                        + " And " + pinpadFLG);
-
                 if (bluetoothFLG) {
-                    Log.i("bluetoothFLG Bluetooth********", "" + bluetoothFLG);
-                    /**
-                     * Toast.makeText(getApplicationContext(),
-                     * ""+listDevicesFound.getCount(),
-                     * Toast.LENGTH_SHORT).show();
-                     */
                     String selection = (String) (bluetooth_list
                             .getItemAtPosition(position));
-
-                    Log.i("selection Bluetooth********", "" + selection);
-
                     Toast.makeText(getApplicationContext(),
                             "BLUETOOTH ADDRESS IS SAVED SUCCESSFULLY",
                             Toast.LENGTH_SHORT).show();
                     address = "";
                     address = selection.substring(0, 17);
                     et_bt_address.setText(address);
-
                     mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                     Alertmessage();
                 } else if (pinpadFLG) {
-                    Log.i("pinpadFLG pinpadFLG********", "" + pinpadFLG);
-                    /**
-                     * Toast.makeText(getApplicationContext(),
-                     * ""+listDevicesFound.getCount(),
-                     * Toast.LENGTH_SHORT).show();
-                     */
                     String selection = (String) (bluetooth_list
                             .getItemAtPosition(position));
-
-                    Log.i("selection pinpadFLG********", "" + selection);
-
                     Toast.makeText(getApplicationContext(),
                             "PINPAD ADDRESS IS SAVED SUCCESSFULLY",
                             Toast.LENGTH_SHORT).show();
                     address = "";
                     address = selection.substring(0, 17);
-                    //et_pinpad.setText(address);
-
                     mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                     Alertmessage();
                 }
-
             }
         });
-		
-		
-		
-		
-/*
-		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-		mProgressDlg = new ProgressDialog(this);
-
-		mProgressDlg.setMessage("Please Wait Bluetooth is Scanning...");
-		mProgressDlg.setCancelable(false);
-		mProgressDlg.setInverseBackgroundForced(false);
-		mProgressDlg.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-
-				mBluetoothAdapter.cancelDiscovery();
-			}
-		});
-
-		if (mBluetoothAdapter == null) {
-			showUnsupported();
-		} else {
-			mPairedBtn.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-
-					if (pairedDevices == null || pairedDevices.size() == 0) {
-						showToast("No Paired Devices Found");
-					} else {
-						ArrayList<BluetoothDevice> list = new ArrayList<BluetoothDevice>();
-
-						list.addAll(pairedDevices);
-
-						Intent intent = new Intent(Settings.this, DeviceListActivity.class);
-
-						intent.putParcelableArrayListExtra("device.list", list);
-
-						startActivity(intent);
-					}
-				}
-			});*/
-
         scan_bluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                //mBluetoothAdapter.startDiscovery();
-
-
-                // 21-Aug-17
                 bluetoothFLG = true;
                 pinpadFLG = false;
 
@@ -441,7 +334,7 @@ public class Settings extends Activity {
                 ftpClient.enterLocalPassiveMode();
                 ftpClient.setBufferSize(1024 * 1024);
                 ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-                File downloadFile1 = new File("/sdcard/Download/39BHYD.apk");
+                File downloadFile1 = new File("/mnt/sdcard/Download/39BHYD.apk");
                 String remoteFile1 = "/23/TabAPK" + "/39BHYD.apk";
                 OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(downloadFile1));
                 boolean success = ftpClient.retrieveFile(remoteFile1, outputStream);
@@ -454,10 +347,7 @@ public class Settings extends Activity {
                         @SuppressWarnings("deprecation")
                         @Override
                         public void run() {
-                            // TODO Auto-generated method stub
                             removeDialog(PROGRESS_DIALOG);
-
-                            // showToast("your is Upto Date");
                             TextView title = new TextView(Settings.this);
                             title.setText("SEIZURE");
                             title.setBackgroundColor(Color.RED);
@@ -469,9 +359,7 @@ public class Settings extends Activity {
                                     R.drawable.dialog_logo, 0);
                             title.setPadding(20, 0, 20, 0);
                             title.setHeight(70);
-
                             String otp_message = "\n Your Application is Upto Date \n No Need to Update \n";
-
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Settings.this,
                                     AlertDialog.THEME_HOLO_LIGHT);
                             alertDialogBuilder.setCustomTitle(title);
@@ -479,30 +367,23 @@ public class Settings extends Activity {
                             alertDialogBuilder.setMessage(otp_message);
                             alertDialogBuilder.setCancelable(false);
                             alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    // TODO Auto-generated method stub
 
                                 }
                             });
-
                             AlertDialog alertDialog = alertDialogBuilder.create();
                             alertDialog.show();
-
                             alertDialog.getWindow().getAttributes();
-
                             TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
                             textView.setTextSize(28);
                             textView.setTypeface(textView.getTypeface(), Typeface.BOLD);
                             textView.setGravity(Gravity.CENTER);
-
                             Button btn1 = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
                             btn1.setTextSize(22);
                             btn1.setTextColor(Color.WHITE);
                             btn1.setTypeface(btn1.getTypeface(), Typeface.BOLD);
                             btn1.setBackgroundColor(Color.RED);
-
                         }
                     });
                 } else {
@@ -537,24 +418,27 @@ public class Settings extends Activity {
                         ftpClient.disconnect();
                         finish();
                         System.out.println("File #1 has been downloaded successfully.");
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setDataAndType(
-                                Uri.fromFile(new File(
-                                        Environment.getExternalStorageDirectory() + "/download/" + "39BHYD.apk")),
-                                "application/vnd.android.package-archive");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
+                        if (Build.VERSION.SDK_INT <= 23) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setDataAndType(
+                                    Uri.fromFile(new File("/mnt/sdcard/Download/39BHYD.apk")),
+                                    "application/vnd.android.package-archive");
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        } else {
+                            Uri apkUri = FileProvider.getUriForFile(Settings.this, BuildConfig.APPLICATION_ID +
+                                    ".fileProvider", new File("/mnt/sdcard/Download/39BHYD.apk"));
+                            Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+                            intent.setData(apkUri);
+                            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            startActivity(intent);
+                        }
                     }
                 }
 
-            } catch (SocketException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
+            } catch (SocketException | FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             return null;
@@ -562,7 +446,6 @@ public class Settings extends Activity {
 
         @Override
         protected void onPostExecute(String result) {
-            // TODO Auto-generated method stub
             super.onPostExecute(result);
             // removeDialog(PROGRESS_DIALOG);
         }
@@ -580,7 +463,6 @@ public class Settings extends Activity {
                 ProgressDialog pd = ProgressDialog.show(this, "", "", true);
                 pd.setContentView(R.layout.custom_progress_dialog);
                 pd.setCancelable(false);
-
                 return pd;
         }
         return null;
@@ -590,38 +472,34 @@ public class Settings extends Activity {
         Toast toast = Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
         View toastView = toast.getView();
-
         ViewGroup group = (ViewGroup) toast.getView();
         TextView messageTextView = (TextView) group.getChildAt(0);
         messageTextView.setTextSize(24);
-
         toastView.setBackgroundResource(R.drawable.toast_background);
         toast.show();
     }
 
     @SuppressWarnings("deprecation")
     private void showProgress(String server) {
-        // TODO Auto-generated method stub
         dialog = new Dialog(Settings.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.myprogressdialog);
         dialog.setTitle("Download Progress");
         dialog.setCancelable(false);
-
         TextView text = (TextView) dialog.findViewById(R.id.tv1);
         text.setText("Downloading file ... ");
         cur_val = (TextView) dialog.findViewById(R.id.cur_pg_tv);
         cur_val.setText("It may Take Few Minutes.....");
         dialog.show();
-
         progress = (ProgressBar) dialog.findViewById(R.id.progress_bar);
-        progress.setProgress(0);// initially progress is 0
+        progress.setProgress(0);
         progress.setMax(100);
         progress.setIndeterminate(true);
         progress.setProgressDrawable(getResources().getDrawable(R.drawable.green_progress));
     }
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
 
@@ -654,9 +532,7 @@ public class Settings extends Activity {
         }
     };
 
-    /* BLUETOOTH CONNECTIVITY */
     private void CheckBlueToothState() {
-        // TODO Auto-generated method stub
         if (bluetoothAdapter == null) {
             ffd.setText("Bluetooth NOT support");
         } else {
@@ -676,13 +552,10 @@ public class Settings extends Activity {
         }
     }
 
-
-    /* BLUETOOTH CONNECTIVITY */
     private final BroadcastReceiver ActionFoundReceiver = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            // TODO Auto-generated method stub
             String action = intent.getAction();
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 BluetoothDevice device = intent
@@ -699,7 +572,6 @@ public class Settings extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         if (requestCode == REQUEST_ENABLE_BT) {
             CheckBlueToothState();
         }
@@ -716,6 +588,7 @@ public class Settings extends Activity {
             finish();
             return;
         }
+
     }
 
 }

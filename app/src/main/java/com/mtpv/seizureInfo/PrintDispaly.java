@@ -42,7 +42,6 @@ public class PrintDispaly extends Activity {
 		
 		SharedPreferences sharedPreference = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		final String requestfrom = sharedPreference.getString("printFrom", "");
-		Log.i("requestfrom for previous history :::", ""+requestfrom);
 		
 		
 		back_Btn.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +101,6 @@ public class PrintDispaly extends Activity {
 					FootPath_Vendor.Ditenditems.clear();
 					FootPath_Vendor.detendItemsA.setLength(0);
 					FootPath_Vendor.detendItemsA.delete(0, FootPath_Vendor.detendItemsA.length());
-					Log.i("FootPath_Vendor.detendItemsA   :::", ""+FootPath_Vendor.detendItemsA);
 					
 					FootPath_Vendor.items = "" ;
 					FootPath_Vendor.imgv.setImageDrawable(getResources().getDrawable(R.drawable.photo));
@@ -137,7 +135,7 @@ public class PrintDispaly extends Activity {
 					
 					FootPath_Vendor.detendLinearLayout.removeAllViews();
 					
-					Intent i2 = new Intent(PrintDispaly.this, FootPath_Vendor.class); 
+					Intent i2 = new Intent(PrintDispaly.this, Dashboard.class);
 					startActivity(i2);
 					
 				}else if (requestfrom.equals("duplicatprint")) {

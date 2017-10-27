@@ -615,97 +615,102 @@ public class ReleaseDocument extends Activity implements LocationListener {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			removeDialog(PROGRESS_DIALOG);
+			if (null!=ServiceHelper.detainedBy_challanNo_resp){
+
 			if (!ServiceHelper.detainedBy_challanNo_resp.equals("0") &&
 					!ServiceHelper.detainedBy_challanNo_resp.equals("anyType{}") &&
-					!ServiceHelper.detainedBy_challanNo_resp.equals("NA") &&
-					ServiceHelper.detainedBy_challanNo_resp!=null) {
-				
+					!ServiceHelper.detainedBy_challanNo_resp.equals("NA")
+					) {
+
 				TicketFLG = true;
 				rl_vhlehstry_root_pchallans_xml.setVisibility(View.VISIBLE);
-				
+
 				// HYD003B161000053!20/12/2016!Y!N!GGGG,HHHH@
 
-				
-				date_tosend = ""+ServiceHelper.pending_challans_master[1] ;
-				
+
+				date_tosend = "" + ServiceHelper.pending_challans_master[1];
+
 				if (ServiceHelper.pending_challans_master[2].equals("N")) {
-					aadhaarFLG = true ;
+					aadhaarFLG = true;
 					adhaar_layout.setVisibility(View.VISIBLE);
 					aadhaar_String = et_adhaar_no.getText().toString().trim();
-				}else {
-					aadhaarFLG = false ;
+				} else {
+					aadhaarFLG = false;
 					adhaar_layout.setVisibility(View.GONE);
 				}
-				
+
 				if (ServiceHelper.pending_challans_master[3].equals("N")) {
-					imageFLG = true ;
+					imageFLG = true;
 					image_layout.setVisibility(View.VISIBLE);
-				}else {
-					imageFLG = false ;
+				} else {
+					imageFLG = false;
 					image_layout.setVisibility(View.GONE);
 				}
-			 	
+
 				sb_selected_penlist = new ArrayList<String>();
-			 	ALL_selected_penlist = new ArrayList<String>();
-			 	
+				ALL_selected_penlist = new ArrayList<String>();
+
 				sb_selected_penlist.clear();
 				ALL_selected_penlist.clear();
 				sb_selected_penlist_positions.clear();
-				sb_selected_penlist_send.delete(0,sb_selected_penlist_send.length());
-				ALL_selected_penlist_toSend.delete(0,ALL_selected_penlist_toSend.length());
-		
-		
+				sb_selected_penlist_send.delete(0, sb_selected_penlist_send.length());
+				ALL_selected_penlist_toSend.delete(0, ALL_selected_penlist_toSend.length());
+
+
 				detained_items_status = new ArrayList<Boolean>();
-		
+
 				LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 				StringBuffer myId = new StringBuffer();
-		
+
 				params.setMargins(0, 0, 0, 10);
 				myId.delete(0, myId.length());
-				
+
 				//cb = new CheckBox[ServiceHelper.pending_challans_master.length];
 				titckt_txt = new TextView[ServiceHelper.pending_challans_master.length];
-		
+
 				ll_vhle_hstry_pending_challans.removeAllViews();
 				ll = new LinearLayout[ServiceHelper.pending_challans_master.length];
-		
+
 				for (int i = 0; i < 1; i++) {
 					total_pendingChallan++;
-					
+
 					ll[i] = new LinearLayout(getApplicationContext());
 					ll[i].setId(i);
 					ll[i].setLayoutParams(params);
 					ll[i].setOrientation(LinearLayout.HORIZONTAL);
-		
+
 					titckt_txt[i] = new TextView(getApplicationContext());
-					android.widget.LinearLayout.LayoutParams params1 = new android.widget.LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,1f);
-					int identifier = getResources().getIdentifier(getApplicationContext().getPackageName()+ ":drawable/custom_chec_box", null, null);
-					titckt_txt[i].setText("\t\t\t\t"+ ServiceHelper.pending_challans_master[0].toString().trim()+"\t\t\t\t\t\t"+ ServiceHelper.pending_challans_master[4].toString().trim());
-		
+					android.widget.LinearLayout.LayoutParams params1 = new android.widget.LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f);
+					int identifier = getResources().getIdentifier(getApplicationContext().getPackageName() + ":drawable/custom_chec_box", null, null);
+					titckt_txt[i].setText("\t\t\t\t" + ServiceHelper.pending_challans_master[0].toString().trim() + "\t\t\t\t\t\t" + ServiceHelper.pending_challans_master[4].toString().trim());
+
 					//total_pendingAmount = total_pendingAmount+Integer.parseInt(ServiceHelper.pending_challans_master[i][7].toString().trim());
-					
+
 					//titckt_txt[i].setButtonDrawable(identifier);
-					titckt_txt[i].setTextAppearance(getApplicationContext(),R.style.navi_text_style);
+					titckt_txt[i].setTextAppearance(getApplicationContext(), R.style.navi_text_style);
 					titckt_txt[i].setId(i);
-		
+
 					ll[i].addView(titckt_txt[i]);
 					detained_items_status.add(true);
-					
-					ALL_selected_penlist.add(""+ServiceHelper.pending_challans_master[0].toString().trim()+ "@"+ 
-							ServiceHelper.pending_challans_master[1].toString().trim()+"@"+
-							ServiceHelper.pending_challans_master[2].toString().trim()+"@"+
-							ServiceHelper.pending_challans_master[3].toString().trim()+"@"+
-							ServiceHelper.pending_challans_master[4].toString().trim()+"$");	
-					
-					
+
+					ALL_selected_penlist.add("" + ServiceHelper.pending_challans_master[0].toString().trim() + "@" +
+							ServiceHelper.pending_challans_master[1].toString().trim() + "@" +
+							ServiceHelper.pending_challans_master[2].toString().trim() + "@" +
+							ServiceHelper.pending_challans_master[3].toString().trim() + "@" +
+							ServiceHelper.pending_challans_master[4].toString().trim() + "$");
+
+
 					ll_vhle_hstry_pending_challans.addView(ll[i]);
 				}
-	
-					//Log.i("total_pendingChallan  ::::::", ""+total_pendingChallan+" and "+total_pendingAmount);
-				
-			}else {
+
+				//Log.i("total_pendingChallan  ::::::", ""+total_pendingChallan+" and "+total_pendingAmount);
+
+			} else {
 				TicketFLG = false;
 				showToast("No Detained Items Found !!!");
+			}
+		}else{
+				showToast("Please check the Network and Try Again!");
 			}
 	  }
 	}

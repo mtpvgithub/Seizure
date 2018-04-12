@@ -76,6 +76,9 @@ public class ServiceHelper {
 	public static void login(String pid, String pidpwd, String mob_imei,
 			String lat, String log,String appVersion) {
 		try {
+
+			//2319130006
+			//0006
 			SoapObject request = new SoapObject(NAMESPACE, "" + AUTHENTICATION);
 			request.addProperty("pidCd", pid);
 			request.addProperty("password", pidpwd);
@@ -401,7 +404,7 @@ public class ServiceHelper {
 			Object result = envelope.getResponse();
 			
 			dupByEticket_resp = result.toString();
-			if (dupByEticket_resp.trim()==null || dupByEticket_resp.trim().equals("NA") || dupByEticket_resp.trim().equals("anyType{}")) {
+			if (dupByEticket_resp.trim().equals("NA") || dupByEticket_resp.trim().equals("anyType{}")) {
 				dupByEticket_resp = null ;
 			}else {
 				dupByEticket_resp = result.toString();

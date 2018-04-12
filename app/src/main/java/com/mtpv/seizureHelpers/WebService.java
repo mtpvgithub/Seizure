@@ -113,7 +113,7 @@ public class WebService extends Activity {
         // TODO Auto-generated method stub
         Log.i("unitCode :::", "" + unitCode);
         /*SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,PSNAMES);
-		PropertyInfo pi=new PropertyInfo();
+        PropertyInfo pi=new PropertyInfo();
 			
 			pi.setName("unitCode");
 			pi.setValue(unitCode);
@@ -232,65 +232,9 @@ public class WebService extends Activity {
                                   String simid, String imei_No, String mac_Id, String gps_Latitude, String gps_Longitude, String imgEncodedDataAfter, String totalFine,
                                   String business_Type, String hawker_Type) {
 
-
-        Log.i("unitCode", "" + unitCd);
-        Log.i("unitName", "" + unitNm);
-        Log.i("bookedPsCode", "" + bookdPsCd);
-        Log.i("bookedPsName", "" + bookdPsNm);
-
-        Log.i("operaterCd", "" + operatrCd);
-        Log.i("operaterName", "" + operatrName);
-        Log.i("pidCd", "" + pidCod);
-        Log.i("pidName", "" + pidNme);
-        Log.i("password", "" + passwrd);
-        Log.i("cadreCD", "" + cadreCd);
-        Log.i("cadre", "" + cadr);
-        Log.i("onlineMode", "" + onlineMd);
-        Log.i("imageEvidence", "" + imageEvidnce);
-        Log.i("imgEncodedData", "" + imgEncoddData);
-        Log.i("offenceDt", "" + offnceDt);
-        Log.i("offenceTime", "" + offncTime);
-        Log.i("firmRegnNo", "" + firmRgnNo);
-        Log.i("shopName", "" + shopNam);
-        Log.i("shopOwnerName", "" + shopOwnrName);
-        Log.i("shopAddress", "" + shopAddrss);
-        Log.i("location", "" + locatn);
-        Log.i("psCode", "" + psCd);
-        Log.i("psName", "" + psNm);
-        Log.i("respondantName", "" + respndntName);
-        Log.i("respondantFatherName", "" + respndntFathrName);
-        Log.i("respondantAddress", "" + respndntAddrss);
-        Log.i("respondantContactNo", "" + respondntCntctNo);
-        Log.i("respondantAge", "" + respdantAge);
-        Log.i("IDCode", "" + IDCd);
-        Log.i("IDDetails", "" + IDDtails);
-        Log.i("witness1Name", "" + witnss1Name);
-        Log.i("witness1FatherName", "" + witnss1FatherName);
-        Log.i("witness1Address", "" + witnss1Address);
-        Log.i("witness2Name", "" + witnss2Name);
-        Log.i("witness2FatherName", "" + witnss2FatherName);
-        Log.i("witness2Address", "" + witnss2Address);
-        Log.i("detainedItems", "" + detaindItems);
-        Log.i("simId", "" + simid);
-        Log.i("imeiNo", "" + imei_No);
-        Log.i("macId", "" + mac_Id);
-        Log.i("gpsLatitude", "" + gps_Latitude);
-        Log.i("gpsLongitude", "" + gps_Longitude);
-        Log.i("imgEncodedDataAfter", "" + imgEncodedDataAfter);
-        Log.i("totalFine", "" + totalFine);//
-
-        Log.i("businessType", "" + business_Type);
-        Log.i("hawkerType", "" + hawker_Type);
-
         try {
-            Log.i("pointName", "" + pointNm);
-
-            Log.i("pointCode", "" + pointCd);
-
             SoapObject request = null;
-
             request = new SoapObject(WSDL_TARGET_NAMESPACE, "" + GenrateChallan);
-
             request.addProperty("unitCode", "" + unitCd);
             request.addProperty("unitName", "" + unitNm);
             request.addProperty("bookedPsCode", "" + bookdPsCd);

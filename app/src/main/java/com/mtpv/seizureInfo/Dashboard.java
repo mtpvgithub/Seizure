@@ -401,7 +401,7 @@ public class Dashboard extends Activity {
 
                 }
 
-            }else{
+            } else {
                 showToast("something went Wrong Please try Again!");
             }
 
@@ -535,7 +535,6 @@ public class Dashboard extends Activity {
         @SuppressLint("SdCardPath")
         @Override
         protected String doInBackground(Void... arg0) {
-            // TODO Auto-generated method stub
 
             FTPClient ftpClient = new FTPClient();
 
@@ -545,7 +544,6 @@ public class Dashboard extends Activity {
             } else {
                 server = "192.168.11.9";
             }
-
 
             try {
                 ftpClient.connect(server, port);
@@ -591,6 +589,7 @@ public class Dashboard extends Activity {
 
                                 }
                             });
+
                             AlertDialog alertDialog = alertDialogBuilder.create();
                             alertDialog.show();
                             alertDialog.getWindow().getAttributes();
@@ -637,7 +636,6 @@ public class Dashboard extends Activity {
                         ftpClient.logout();
                         ftpClient.disconnect();
                         finish();
-                        System.out.println("File #1 has been downloaded successfully.");
                         if (Build.VERSION.SDK_INT <= 23) {
                             Intent intent = new Intent(Intent.ACTION_VIEW);
                             intent.setDataAndType(

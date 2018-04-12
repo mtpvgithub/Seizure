@@ -54,8 +54,6 @@ import com.mtpv.seizureHelpers.ServiceHelper;
 import com.mtpv.seizureHelpers.WebService;
 
 
-/******************Login ResPonse***************/
-/*PID code| officerName| PSCode| PsName| CadreCode| Cadre| Password*/
 public class MainActivity extends Activity implements LocationListener,OnClickListener {
 
     final WebService WS = new WebService();
@@ -91,16 +89,16 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
     public static String[] arr_logindetails;
 
     LinearLayout ip_settings;
-
     public static String PIdCode, userName, passWord;
     static String resp;
     static String uintCode = "23";
     static String uintName = "Hyderabad";
-
     final int SPLASH_DIALOG = 0;
     final int PROGRESS_DIALOG = 1;
+
     /* GPS VALUES */
     // flag for GPS status
+   
     boolean isGPSEnabled = false;
     // flag for network status
     boolean isNetworkEnabled = false;
@@ -108,7 +106,7 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
     // The minimum distance to change Updates in meters
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10; // 10 meters
     // The minimum time between updates in milliseconds
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1; // 1 minute
+    private static final long MIN_TIME_BW_UPDATES = 1000 * 60; // 1 minute
     public static String PsCode = null, PsName = null;
     double latitude = 0.0;
     double longitude = 0.0;
@@ -133,7 +131,6 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
             Manifest.permission.INTERNET,
             Manifest.permission.BLUETOOTH,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.READ_SMS,
             Manifest.permission.SEND_SMS,
             Manifest.permission.CAMERA,
@@ -210,7 +207,7 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
             addShortcut();
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("isFirstTime", true);
-            editor.commit();
+            editor.apply();
         }
         /**************Adding Shortcut of Application**************/
 
@@ -226,12 +223,11 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
 
 
         ip_settings = (LinearLayout) findViewById(R.id.ip_settings);
-
         userID_ET = (EditText) findViewById(R.id.userID_ET);
         password_ET = (EditText) findViewById(R.id.password_ET);
 
-        userID_ET.setText("23001004");
-        password_ET.setText("WdSt48Pri");
+        /*userID_ET.setText("23001004");
+        password_ET.setText("WdSt48Pri");*/
 
         cancel_Btn = (Button) findViewById(R.id.cancel_Btn);
         login_Btn = (Button) findViewById(R.id.login_Btn);
@@ -388,9 +384,6 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
             }
         });
     }
-
-
-
 
     public void requestAppPermissions(final String[] requestedPermissions,
                                       final int stringId, final int requestCode) {
@@ -688,6 +681,7 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
 
     public void getLocation() {
         try {
+
             m_locationlistner = (LocationManager) this.getSystemService(LOCATION_SERVICE);
             // getting GPS status
             isGPSEnabled = m_locationlistner.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -771,7 +765,6 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
         IMEI = getDeviceID(telephonyManager);
     }
 
-
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
@@ -845,7 +838,6 @@ public class MainActivity extends Activity implements LocationListener,OnClickLi
     }
 
     /**************Adding Shortcut of Application**************/
-
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public void onBackPressed() {

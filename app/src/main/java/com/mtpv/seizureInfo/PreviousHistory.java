@@ -233,252 +233,250 @@ public class PreviousHistory extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                if (isNetworkAvailable()){
+                if (isNetworkAvailable()) {
 
-                VerhoeffCheckDigit ver = new VerhoeffCheckDigit();
-                Selected_id_prrof = "" + prevH_id_options.getText().toString();
+                    VerhoeffCheckDigit ver = new VerhoeffCheckDigit();
+                    Selected_id_prrof = "" + prevH_id_options.getText().toString();
 
 
-                /*********************************	AADHAAR VALIDATION start************************/
+                    /*********************************	AADHAAR VALIDATION start************************/
 
-                if (Selected_id_prrof.toString().equals("AADHAAR")) {
-                    Log.i("Selected proof", "" + Selected_id_prrof);
+                    if (Selected_id_prrof.toString().equals("AADHAAR")) {
+                        Log.i("Selected proof", "" + Selected_id_prrof);
 
-                    et_id_text_prev_hist.setHint("PLEASE ENTER AADHAAR NO");
+                        et_id_text_prev_hist.setHint("PLEASE ENTER AADHAAR NO");
 
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid Aadhaar</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
-                            && et_id_text_prev_hist.getText().toString().trim().length() != 12) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter 12 digit Aadhaar</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
-                            && et_id_text_prev_hist.getText().toString().trim().length() == 12
-                            && !ver.isValid(et_id_text_prev_hist.getText().toString().trim())) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid Aadhaar</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
-                            && et_id_text_prev_hist.getText().toString().trim().length() == 12
-                            && ver.isValid(et_id_text_prev_hist.getText().toString().trim())) {
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid Aadhaar</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
+                                && et_id_text_prev_hist.getText().toString().trim().length() != 12) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter 12 digit Aadhaar</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
+                                && et_id_text_prev_hist.getText().toString().trim().length() == 12
+                                && !ver.isValid(et_id_text_prev_hist.getText().toString().trim())) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid Aadhaar</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1
+                                && et_id_text_prev_hist.getText().toString().trim().length() == 12
+                                && ver.isValid(et_id_text_prev_hist.getText().toString().trim())) {
 
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
                         }
+
                     }
+                    /*********************************	AADHAAR VALIDATION end************************/
 
-                }
-                /*********************************	AADHAAR VALIDATION end************************/
+                    /*********************************	DL VALIDATION start************************/
 
-                /*********************************	DL VALIDATION start************************/
+                    else if (Selected_id_prrof.toString().equals("DRIVING LICENCE")) {
 
-                else if (Selected_id_prrof.toString().equals("DRIVING LICENCE")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER DL NO");
+                        et_id_text_prev_hist.setHint("PLEASE ENTER DL NO");
 
 
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid DL</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1) {
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid DL</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1) {
 
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	DL VALIDATION end************************/
-                /*********************************	PAN VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("PAN CARD")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER PAN NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid PAN NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	PAN VALIDATION end************************/
-
-                /*********************************	PASSPORT VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("PASSPORT")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER PASSPORT NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid PASSPORT NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	PASSPORT VALIDATION end************************/
-                /*********************************	VOTER ID VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("VOTER ID")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER VOTER ID NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid VOTER ID NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	VOTER ID VALIDATION end************************/
-                /*********************************	ELECTRICITY VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("ELECTRICITY BILL")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER ELECTRICITY BILL NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid ELECTRICITY BILL NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	ELECTRICITY ID VALIDATION end************************/
-                /*********************************	LPG VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("LPG GAS BILL")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER LPG GAS BILL NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid ELECTRICITY BILL NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	ELECTRICITY ID VALIDATION end************************/
-                /*********************************	WATER VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("WATER BILL")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER WATER BILL NO");
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid WATER BILL NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
-                        }
-                    }
-
-                }
-
-                /*********************************	WATER ID VALIDATION end************************/
-                /*********************************	WATER VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("BSNL PHONE BILL")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER CONTACT NO");
-
-                    String tempContactNumber = et_id_text_prev_hist.getText().toString().trim();
-
-
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid CONTACT NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().length() > 1 && et_id_text_prev_hist.getText().toString().length() < 10) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid 10 digit CONTACT NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if ((tempContactNumber.charAt(0) != '7')
-                            || (tempContactNumber.charAt(0) != '8')
-                            || (tempContactNumber.charAt(0) != '9')) {
-
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
                         }
 
                     }
 
+                    /*********************************	DL VALIDATION end************************/
+                    /*********************************	PAN VALIDATION start************************/
 
-                }
+                    else if (Selected_id_prrof.toString().equals("PAN CARD")) {
 
-                /*********************************	WATER ID VALIDATION end************************/
-                /*********************************	TRADE LICENSE VALIDATION start************************/
-
-                else if (Selected_id_prrof.toString().equals("TRADE LICENSE NO")) {
-
-                    et_id_text_prev_hist.setHint("PLEASE ENTER TRADE LICENSE NO");
+                        et_id_text_prev_hist.setHint("PLEASE ENTER PAN NO");
 
 
-                    if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
-                        et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid TRADE LICENSE NO</font>"));
-                        et_id_text_prev_hist.requestFocus();
-                    } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid PAN NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 1) {
 
-                        if (isNetworkAvailable()) {
-                            new Asyncprevoius_history_ID().execute();
-                        } else {
-                            showToast("Please Enable Data Connection!!");
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
                         }
+
                     }
 
-                }
-            }else{
+                    /*********************************	PAN VALIDATION end************************/
+
+                    /*********************************	PASSPORT VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("PASSPORT")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER PASSPORT NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid PASSPORT NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+
+                    /*********************************	PASSPORT VALIDATION end************************/
+                    /*********************************	VOTER ID VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("VOTER ID")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER VOTER ID NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid VOTER ID NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+
+                    /*********************************	VOTER ID VALIDATION end************************/
+                    /*********************************	ELECTRICITY VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("ELECTRICITY BILL")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER ELECTRICITY BILL NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid ELECTRICITY BILL NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+
+                    /*********************************	ELECTRICITY ID VALIDATION end************************/
+                    /*********************************	LPG VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("LPG GAS BILL")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER LPG GAS BILL NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid ELECTRICITY BILL NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+
+                    /*********************************	ELECTRICITY ID VALIDATION end************************/
+                    /*********************************	WATER VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("WATER BILL")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER WATER BILL NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid WATER BILL NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+
+                    /*********************************	WATER ID VALIDATION end************************/
+
+                    /*********************************	WATER VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("BSNL PHONE BILL")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER CONTACT NO");
+                        String tempContactNumber = et_id_text_prev_hist.getText().toString().trim();
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid CONTACT NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().length() > 1 && et_id_text_prev_hist.getText().toString().length() < 10) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid 10 digit CONTACT NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if ((tempContactNumber.charAt(0) != '7')
+                                || (tempContactNumber.charAt(0) != '8')
+                                || (tempContactNumber.charAt(0) != '9')) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+
+                        }
+
+
+                    }
+
+                    /*********************************	WATER ID VALIDATION end************************/
+                    /*********************************	TRADE LICENSE VALIDATION start************************/
+
+                    else if (Selected_id_prrof.toString().equals("TRADE LICENSE NO")) {
+
+                        et_id_text_prev_hist.setHint("PLEASE ENTER TRADE LICENSE NO");
+
+
+                        if (et_id_text_prev_hist.getText().toString().trim().equals("")) {
+                            et_id_text_prev_hist.setError(Html.fromHtml("<font color='white'>Please Enter Valid TRADE LICENSE NO</font>"));
+                            et_id_text_prev_hist.requestFocus();
+                        } else if (et_id_text_prev_hist.getText().toString().trim().length() > 2) {
+
+                            if (isNetworkAvailable()) {
+                                new Asyncprevoius_history_ID().execute();
+                            } else {
+                                showToast("Please Enable Data Connection!!");
+                            }
+                        }
+
+                    }
+                } else {
                     showToast("Please check the Network!");
                 }
 
@@ -491,13 +489,11 @@ public class PreviousHistory extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-                if (firm_based.isChecked() == true) {
+                if (firm_based.isChecked()) {
 
                     new Asyncprevoius_history_firm().execute();
                 }
-                if (prevH_GHMCTIN_based.isChecked() == true) {
+                if (prevH_GHMCTIN_based.isChecked()) {
                     new Asyncprevoius_history_GHMCTIN().execute();
                 }
 
@@ -508,7 +504,6 @@ public class PreviousHistory extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
 
                 Intent i = new Intent(PreviousHistory.this, Dashboard.class);
                 startActivity(i);

@@ -264,7 +264,7 @@ public class FootPath_Preview extends Activity {
 
 
         try {
-            byte[] decodedString = Base64.decode(image, Base64.NO_WRAP);
+            byte[] decodedString = Base64.decode(FootPath_Vendor.imgString, Base64.NO_WRAP);
             InputStream inputStream = new ByteArrayInputStream(decodedString);
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
             imgvd.setImageBitmap(bitmap);
@@ -275,7 +275,7 @@ public class FootPath_Preview extends Activity {
 
 
         try {
-            byte[] decodedString = Base64.decode(tin_image, Base64.NO_WRAP);
+            byte[] decodedString = Base64.decode(FootPath_Vendor.imgString2, Base64.NO_WRAP);
             InputStream inputStream = new ByteArrayInputStream(decodedString);
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
             imgvd2.setImageBitmap(bitmap);
@@ -378,9 +378,9 @@ public class FootPath_Preview extends Activity {
         onlineMode = "1";
 
         imageEvidence = "1";
-        imgEncodedData = image;
+        imgEncodedData = FootPath_Vendor.imgString;
 
-        imgEncodedDataAfter = tin_image;
+        imgEncodedDataAfter = FootPath_Vendor.imgString2;
 
         offenceDt = timestamp.trim();
         // Log.i("offenceDt :::", ""+offenceDt);

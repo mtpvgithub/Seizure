@@ -300,6 +300,9 @@ public class FootPath_Vendor extends Activity implements LocationListener {
 
         get_location_details = (Button) findViewById(R.id.get_location_details);
 
+        imgString=null;
+        imgString2=null;
+
 
         newtimer = new CountDownTimer(1000000000, 50) {
 
@@ -550,11 +553,13 @@ public class FootPath_Vendor extends Activity implements LocationListener {
 
                 gps = new GPSTracker(FootPath_Vendor.this);
 
+
                 // check if GPS enabled
                 if (gps.getLocation() != null && latitude != 0.0 && longitude != 0.0) {
 
                     latitude = gps.getLatitude();
                     longitude = gps.getLongitude();
+                    imgString=null;
 
                     FootPath_Vendor.SelPicId = "1";
                     selectImage();
@@ -583,6 +588,7 @@ public class FootPath_Vendor extends Activity implements LocationListener {
 
                     latitude = gps.getLatitude();
                     longitude = gps.getLongitude();
+                    imgString2=null;
 
                     FootPath_Vendor.SelPicId = "2";
                     selectImage();
@@ -1028,7 +1034,7 @@ public class FootPath_Vendor extends Activity implements LocationListener {
                         .getDrawable(R.drawable.photo).getConstantState()) {
                     showToast("Please Select Encroachment Image");
                 } else if (imgString2 == null && imgv2.getDrawable().getConstantState() == getResources()
-                        .getDrawable(R.drawable.photo).getConstantState()) {
+                        .getDrawable(R.drawable.tin).getConstantState()) {
                     showToast("Please Select After Removal Encroachment Image");
                 } /*
 					 * else if (imgv2.getDrawable().getConstantState() ==
@@ -1094,16 +1100,12 @@ public class FootPath_Vendor extends Activity implements LocationListener {
                                 detItems.append(Items.get(i));
                                 detItems.append("@");
                             }
-
-                            System.out.println("checkedlist:" + selectChB);
                             Intent dis = new Intent(FootPath_Vendor.this, FootPath_Preview.class);//
-
                             dis.putExtra("Fregnno", "");
                             dis.putExtra("ShopName", "");
                             dis.putExtra("ShopLocation", "");
                             dis.putExtra("Location", Location);
                             dis.putExtra("Landmark", Landmark);
-
                             dis.putExtra("Date", Date);
                             dis.putExtra("Date", Date);
                             dis.putExtra("PSName", PSName);
@@ -1123,10 +1125,8 @@ public class FootPath_Vendor extends Activity implements LocationListener {
                             dis.putExtra("WitnessAddress2", "");
                             dis.putExtra("detItems", detItems.toString());
                             dis.putExtra("detendItemsA", detendItemsA.toString());
-
                             dis.putExtra("hawkerType", hawkerType);
                             dis.putExtra("BussinessType", business_Type);
-
 
                             SharedPreferences sharedPreference = PreferenceManager
                                     .getDefaultSharedPreferences(getApplicationContext());
@@ -1143,12 +1143,10 @@ public class FootPath_Vendor extends Activity implements LocationListener {
                             } catch (Exception e) {
                                 System.out.println("imgString2 ::" + e);
                             }
-
                             edit.apply();
                             dis.putExtra("pscd", selectedPs_code);
                             dis.putExtra("pointCD", pointCD);
                             dis.putExtra("IDproofCD", IDproofCD);
-
                             dis.putExtra("A_PidCode", A_PidCode);
                             dis.putExtra("A_PidName", A_PidName);
                             dis.putExtra("A_PsCode", A_PsCode);
@@ -1156,18 +1154,12 @@ public class FootPath_Vendor extends Activity implements LocationListener {
                             dis.putExtra("A_CadreCode", A_CadreCode);
                             dis.putExtra("A_Cadre", A_Cadre);
                             dis.putExtra("A_SecurityCd", A_SecurityCd);
-
                             dis.putExtra("timestamp", strDate);
-
                             startActivity(dis);
-
                             Items.clear();
                         }
 
-                    } /*
-						 * else if (Shop_vendor.otp_verify_status == "N") {
-						 * showToast("Please Verify OTP !!!"); } }
-						 */ else {
+                    } else {
                         rmobileno_ET.setError(Html.fromHtml("<font color='white'>Check Contact No.!!</font>"));
                         rmobileno_ET.requestFocus();
                     }
@@ -2535,7 +2527,7 @@ public class FootPath_Vendor extends Activity implements LocationListener {
             // TODO Auto-generated method stub
             String query = "select PS_CODE from " + DataBase.psName_table + " where PS_NAME='"
                     + psname_Btn.getText().toString().trim() + "'";
-            // selectedPs_code
+
             my_psCode_arr.clear();
 
             try {
